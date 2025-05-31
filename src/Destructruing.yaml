@@ -1,0 +1,147 @@
+//website destructuring
+
+website name = Tabaccco
+
+website Fonts
+.BASKE10.ttf ✅
+.Fontspring-DEMO-bebasneuepro-book.ttf ✅
+.HelveticaNeueThinItalic.otf v
+
+Components
+pages
+
+
+navbar =  ✅
+Home 
+what on
+book this value
+gallery
+About us
+Vacanies
+Contact
+
+
+navbar hamari fixed rahegi ✅
+
+Home page Component ✅
+full video lgygi and uspe uper text aygea 
+jese hi video ke beach me hover hoga text in hoga
+
+onstage ✅
+onstagecard  = 4 Component banegey
+
+
+impressive-Amsterdam ✅
+
+iske andr 2 file banegey
+
+aik file me text ayega text hamara fixed rahega
+dosre file me images ayengi jo scroll hone pe uper jyengi hum kisi bhi images ko open kr sakty hai
+
+
+Taketabbaco 
+container ayega jisme iamges hongi aur uske uper text hoga jo positon fixed se add hoga
+
+
+Featured =  ✅
+
+left and right
+
+
+
+Footer ✅
+
+Footer-top = desc
+Footer-bottom = event desc and our adress contact gmail
+
+Footer-ebd =  aik text hoga jisme tobacco likha hoga thora nechy hoga jese hi hover krengey wo text uper hoga aik aik text means ke nth child lagaen gey
+
+
+
+what on ✅
+
+landing page hoga
+h1 ke andr whaton likha hoga baki 
+on-stage-card component reused hoga acha isme 10 caard ayengey
+
+
+
+ready-take-stage component copy hoga props ke throguh data ayega ✅
+
+Footer
+
+
+
+book this value 
+
+landing page ayega jsime top aur bottom hoga text aur image ✅
+
+
+
+conferens dinners
+left aur right hoga
+
+
+Our room = ✅
+9 lines hoga  
+left bottom center
+ab jsi bhi line pe click hoga to image show hogi aur uske ke andr ka kam
+
+
+need-advice ✅
+
+
+whatotherthinkoff ✅
+slider banega
+
+
+Featured component copy hoga ✅
+
+ready-take-stage copy hoga ✅
+
+Footer copy hoga ✅
+
+
+Gallery page banega
+
+jsime text beach me hoga posiftion fixed nechy se images bht sari arhi hongi
+
+Footer
+
+ 
+About-us   ✅
+
+Landing page banega = book the value wala compoennt copy hoga aur props ke through data ayega  ✅
+  
+bustling-tobacco paragh  ✅
+ 
+Feauted wala component  3 dafa copy honey aur text aur bitton chnages hongi  ✅
+
+ready-take-stage compoent copy hoga aur bass text copy hoga  ✅
+
+
+phir se feautrd wala component copy hoga  ✅
+
+Footer
+
+
+VACCINES 
+
+book this value component copy hoga props ke thoguh text chanage hoga  ✅
+
+ 
+VaccinesHospitality   ✅
+hamara pass dropdown ke andr full data ayaeg
+
+
+Featured wala component chpy hoga  ✅
+
+
+cONTACT US
+
+cONTACT US LANDING PAGE
+
+
+cONTACT US FAQS
+
+fOOTER
