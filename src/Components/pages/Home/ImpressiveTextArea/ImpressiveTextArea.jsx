@@ -1,13 +1,13 @@
 import React from 'react'
 import ImpressiveOverview from './ImpressiveOverview'
-import Impressivetext from './Impressivetext'
-const ImpressiveAmsterdam = () => {
+import TextArea from './TextArea'
+const ImpressiveTextArea = () => {
   return (
     <div className='impressiveAmsterdam'>
-      <Impressivetext/>
+      <TextArea />
       <ImpressiveOverview/>
     </div>
   )
 }
 
-export default ImpressiveAmsterdam
+export default ImpressiveTextArea

@@ -4,14 +4,14 @@ import Onstage from "./Onstage/Onstage";
 import Featured from "./Featured/Featured";
 import TakeTabbaco from "./TakeTabbaco/TakeTabbaco";
 import Loader from "../../Loader/Loader";
-import ImpressiveAmsterdam from "./ImpressiveAmsterdam/ImpressiveAmsterdam.Jsx";
+import ImpressiveTextArea from "./ImpressiveTextArea/ImpressiveTextArea";
 const Home = () => {
   return (
     <div className="Home">
       <Loader />
       <Homelanding />
       <Onstage />
-      <ImpressiveAmsterdam />
+      <ImpressiveTextArea  />
       <TakeTabbaco
         imageUrl="https://tobacco.nl/wp-content/uploads/2024/12/Visual-Ook-op-het-podium.jpg"
         heading="
