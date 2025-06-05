@@ -10,7 +10,7 @@ body {
   width: 100%;
 }
 
-::selection{
+::selection {
   background-color: #e9d223;
   color: black;
 }
@@ -41,14 +41,29 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
+
 .Loader {
+  position: fixed; /* Sticks to the screen */
   top: 0;
   left: 0;
-  height: 100vh;
   width: 100%;
-  background-color: #552341;
-  z-index: 999;
-  position: absolute;
+  height: 100vh; /* Full screen height */
+  background: #552341; /* Or any background */
+  z-index: 9999; /* High so it appears above everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Loader .image img {
+  width: 100%;
+}
+.Loader img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .Topmen {
@@ -143,6 +158,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .Navbar .end .ownevent h6 {
@@ -171,7 +187,6 @@ body {
   text-transform: uppercase;
   background-color: #ffffff;
   color: black;
-  cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
   cursor: pointer;
@@ -218,7 +233,7 @@ body {
 
 .video-container {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
   z-index: 6;
   display: flex;
@@ -230,6 +245,7 @@ body {
   width: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 0.1 black;
 }
 
 .innertext {
@@ -242,10 +258,10 @@ body {
 }
 .innertext h3 {
   font-family: Fontspring;
-  font-size: 12vw;
+  font-size: 16vw;
   text-transform: uppercase;
   font-weight: 500;
-  line-height: 9.5vw;
+  line-height: 12vw;
   color: #d2c138;
   opacity: 0;
   transition: all ease 1s;
@@ -301,36 +317,46 @@ body {
 .Onstagecard {
   height: 100%;
   width: 100%;
-  padding: 0 4.3vw;
+  padding: 4vw 4.3vw;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 1vw; /* Optional spacing between cards */
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw;
 }
 
 .Onstagecard .card {
-  height: 80vh;
-  width: 100%; /* Full inside the grid cell */
+  width: 100%;
   overflow: hidden;
   margin: 1vw 0;
+  cursor: pointer;
 }
 
 .Onstagecard .card .imagecon {
   height: 67vh;
   width: 100%;
+  transition: all ease 0.5s;
 }
-
+.Onstagecard .card .imagecon:hover {
+  padding: 1vw 1vw;
+}
 .Onstagecard .card .imagecon img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
+
+.Onstagecard .card h2 {
+  font-family: Fontspring;
+  font-size: 2vw;
+  font-weight: 500;
+  padding: 0.6vw 0;
+}
+
 .Onstagecard .card h3 {
   font-family: BASKE10;
   font-size: 2vw;
   font-weight: 500;
-  margin: 1.5vw 0;
 }
 
 .impressiveAmsterdam {
@@ -360,13 +386,15 @@ body {
 .impressivetext h4 {
   font-family: BASKE10;
   font-weight: 500;
-  font-size:5vw;
+  font-size: 5vw;
   line-height: 4vw;
   margin: 2vw 0;
   color: #121313;
   text-transform: none;
 }
-
+.impressivetext .Link {
+  text-decoration: none;
+}
 .impressiveAmsterdamoverview {
   width: 100%;
 }
@@ -395,18 +423,84 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 2vw 2vw;
   flex-direction: row;
   position: relative;
-  margin-bottom: 3vw;
 }
 
-.FeaturedJunaHorstman{
+.FeaturedJunaHorstman {
   width: 100%;
-  background-color: #622F4E;
+  background-color: #622f4e;
 }
 
-.InterviewwithJuna{
+.EventDetails {
+  width: 100%;
+  background-color: #e6accf;
+}
+
+.eventbottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Actay;
+  font-size: 1.3vw;
+}
+
+.eventbottomright h2 {
+  font-family: fontspring;
+  text-transform: uppercase;
+  font-size: 3vw;
+  margin: 2vw 0;
+}
+
+.eventbottom .eventbottomleft {
+  height: 100%;
+  width: 60%;
+  padding: 3vw 0;
+
+}
+
+.eventbottom .eventbottomright {
+  height: 100%;
+  width: 30%;
+  padding: 2vw 2vw;
+  margin: 1vw 2vw;
+
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1vw;
+}
+
+.detailbox {
+  padding: 0.5vw;
+  border-radius: 8px;
+}
+
+.detailbox h3 {
+  font-size: 1.2vw;
+  color: #222;
+  font-family: actay;
+  font-weight: 500;
+  margin-bottom: 0.5vw;
+}
+
+.detailbox h4 {
+  font-size: 1.1vw;
+  font-weight: 500;
+  font-family: actay;
+  text-transform: none;
+  color: #000000;
+}
+
+.InterviewwithJuna {
   width: 100%;
 }
 .textarea {
@@ -421,7 +515,7 @@ body {
 
 .textarea .textarealeft,
 .textarea .textarearight {
-  width: 48%;
+  width: 65%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -429,6 +523,8 @@ body {
   padding: 1vw 2vw;
   box-sizing: border-box;
   margin: 0 auto;
+
+
 }
 
 .sectionleft,
@@ -436,31 +532,19 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 2vw;
+
 }
 
-.sectionleft h2,
-.sectionright h2 {
-  font-family: Fontspring;
-  margin-bottom: 1vw;
-  text-transform: uppercase;
-  font-size: 2.3vw;
-  color: white;
+.left-text {
+  font-size: 1.1rem;
+  
+
 }
 
-.sectionleft h4,
-.sectionright h4 {
-  font-family: actay;
-  font-size: 1.2vw;
-  font-weight: 500;
-  color: white;
-  text-transform: none;
-  line-height: 1.5;
-}
 .Junaslider {
   width: 100%;
   margin: 0 auto;
   padding: 5vw 0;
-  
 }
 
 .mySwiper {
@@ -473,20 +557,13 @@ body {
   justify-content: center;
   font-size: 2rem;
   cursor: pointer;
-
 }
 
-.swiper-slide  img{
-height: 100%;
-width: 100%;
-object-fit: cover;
-
+.swiper-slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
-
-
-
-
-
 
 .Featured.reverse {
   flex-direction: row-reverse;
@@ -546,150 +623,6 @@ object-fit: cover;
   object-position: center;
 }
 
-.Footer {
-  width: 100%;
-  background-color: #174138;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 4vw;
-  position: absolute;
-}
-
-.Footer .Footertop {
-  height: 40vh;
-  width: 100%;
-  background-color: #cbe3de;
-  overflow: hidden;
-  padding: 2vw 3vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 5vw;
-  margin-top: 2.5vw;
-}
-
-.Footer .Footertop .Footertopcard {
-  height: 100%;
-  width: 25%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 1vw;
-}
-
-.Footer .Footertop .Footertopcard h6 {
-  font-family: BASKE10;
-  font-size: 3vw;
-  text-align: center;
-  line-height: 2.2vw;
-  color: #174138;
-  margin-bottom: 1vw;
-}
-
-.Footer .Footertop .Footertopcard p {
-  font-family: HelveticaNeueThinItalic;
-  font-size: 1.5vw;
-  text-align: center;
-  color: #174138;
-}
-
-.Footer .Footerbottom {
-  height: 45vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  padding: 2vw 0;
-  justify-content: space-between;
-  border-top: 1px solid rgba(245, 245, 245, 0.462);
-}
-
-.Footer .Footerbottom .Footerbottomleft {
-  height: 100%;
-  width: 43%;
-  color: #cbe3de;
-}
-
-.Footer .Footerbottom .Footerbottomleft h3 {
-  font-family: BASKE10;
-  font-weight: 500;
-  font-size: 5vw;
-  color: #cbe3de;
-  line-height: 4.5vw;
-}
-.Footer .Footerbottom .Footerbottomleft h3 span {
-  font-family: bebasneuepro;
-  font-weight: 600;
-}
-.Footer .Footerbottom .Footerbottomcenter {
-  height: 100%;
-  width: 25%;
-
-}
-.footer-link{
-  color: #cbe3de;
-  text-decoration: none   ;
-}
-.Footer .Footerbottom .Footerbottomcenter p {
-  font-family: bebasneuepro;
-  font-size: 1.7vw;
-  font-weight: 500;
-  color: #cbe3de;
-  margin: 0.5vw 0;
-  transition: all ease 1s;
-}
-.Footer .Footerbottom .Footerbottomcenter p:hover {
-  color: #FFEA42;
-  cursor: pointer;
-}
-.Footer .Footerbottom .Footerbottomright {
-  height: 100%;
-  width: 25%;
-}
-
-.Footer .Footerbottom .Footerbottomright p {
-  font-family: bebasneuepro;
-  font-size: 1.7vw;
-  font-weight: 500;
-  color: #cbe3de;
-  margin: 0.5vw 0;
-  transition: all ease 1s;
-}
-
-
-.Footer .Footerbottom .Footerbottomright p:hover {
-  color: #FFEA42;
-  cursor: pointer;
-}
-
-.Footerend {
-  width: 100%;
-  overflow: hidden;
-}
-.Footerend h2 {
-  font-family: bebasneuepro;
-  font-size: 32vw;
-  text-transform: uppercase;
-  color: #ffea44;
-  font-weight: 700;
-  display: flex; /* make characters inline-flex */
-  flex-wrap: wrap;
-  gap: 0.2vw; /* slight gap between characters */
-  cursor: pointer;
-}
-
-.Footerend h2 span {
-  display: inline-block;
-  transition: transform 0.6s ease;
-}
-
-.Footerend h2 span:hover {
-  transform: translateY(-20%);
-}
-
 .TakeTabbaco {
   height: 150vh;
   width: 100%;
@@ -714,7 +647,7 @@ object-fit: cover;
   width: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .overlay {
@@ -774,6 +707,7 @@ object-fit: cover;
   font-size: 13vw;
   text-transform: uppercase;
   color: #f3d5e7;
+  
 }
 
 .ProgramticketCards {
@@ -800,7 +734,7 @@ object-fit: cover;
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
-  margin-bottom:5vw;
+  margin-bottom: 5vw;
 }
 
 .HallRentalLaningtext h3 {
@@ -813,7 +747,7 @@ object-fit: cover;
 .HallRentalLaningtext h2 {
   font-family: Fontspring;
   font-size: 7vw;
-  line-height: 5.3vw;
+  line-height: 5.8vw;
   text-transform: uppercase;
   margin-bottom: 2vw;
 }
@@ -941,18 +875,14 @@ object-fit: cover;
   text-transform: uppercase;
 }
 
-
-
 .Container h4 {
   font-family: actay;
   font-size: 1vw;
   font-weight: 500;
   margin: 1vw 0;
   color: white;
-  padding:1vw 0;
+  padding: 1vw 0;
   text-transform: none;
-  
-
 }
 
 .whatotherthinkoff {
@@ -1014,58 +944,69 @@ h6 {
 }
 
 .Gallery {
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
   width: 100%;
   background-color: #622f4e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow-y: auto;
+}
+.gallerytext {
+  position: fixed; /* absolute ki jagah fixed */
+  top: 10%; /* jahan rakhna hai text ko */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* images ke neeche */
+  width: 100%;
+  text-align: center;
+  margin-top: 13vw;
 }
 
 .gallery-title {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 12vw;
+  font-size: 16vw;
   font-weight: bold;
-  z-index: 10;
   font-family: Fontspring;
-  text-transform: uppercase;
-  pointer-events: none;
-  color: #fff; /* or something with contrast */
+  text-transform: none;
+  margin: 0;
+  color: #f3d5e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 8vw;
 }
 
 .gallery-title span {
   font-family: BASKE10;
-  text-transform: none;
   font-weight: 500;
+  font-size: 5vw;
+  text-transform: none;
 }
 
-.gallery-images {
-  padding-top: 120vh; /* pushes images below fixed heading */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 20px;
-  padding: 50px;
-  height: 90vh;
+.Galleryimage {
+  position: relative;
+  z-index: 10; /* above the text */
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  padding-top: 20vw; /* push images below the text */
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-top: 20vw;
 }
 
-.gallery-img-wrapper {
-  overflow: hidden;
-  border-radius: 10px;
+.imagecontainer {
+  height: 60vh;
+  width: 55%;
+  margin: 2vw auto;
+  border-radius: 12px;
 }
 
-.gallery-img-wrapper img {
+.imagecontainer img {
+  height: 100%;
   width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
+  object-fit: cover;
+  object-position: center;
 }
-
-.gallery-img-wrapper:hover img {
-  transform: scale(1.05);
-}
-
 .Aboutus {
   width: 100%;
   background-color: #174138;
@@ -1088,12 +1029,10 @@ h6 {
   color: #ffea44;
 }
 
-
-.Stichting{
+.Stichting {
   width: 100%;
-  background-color: #E6ACCF;
+  background-color: #e6accf;
 }
-
 
 .Vacanies {
   width: 100%;
@@ -1113,13 +1052,12 @@ h6 {
   font-weight: 500;
   text-transform: uppercase;
   color: #000000;
+
 }
 
 .VacanciesDropdown {
   width: 100%;
 }
-
-
 
 /* FAQ Container */
 .faqs-container {
@@ -1133,19 +1071,17 @@ h6 {
   text-align: center;
   color: #333;
   margin-bottom: 7vh;
-  font-family:Satoshi ;
+  font-family: Satoshi;
   text-transform: uppercase;
   font-size: 2.6vw;
   color: #242627;
   transition: all ease 1s;
-
-  
 }
 
 /* FAQ Items */
 .faq-item {
   margin-bottom: 10px;
-  padding:2vw;
+  padding: 2vw;
   transition: all ease 1s;
   cursor: pointer;
   margin: 1vw 0;
@@ -1153,60 +1089,49 @@ h6 {
   font-weight: 500;
 }
 
-
 /* Question Section */
 .faq-question {
   font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 500;
   color: #242627;
   border-bottom: 1px solid black;
   transition: all ease 1s;
   margin: -1vw 0;
-  
-
 }
-
 
 .faq-question h3 {
   font-size: 1.8vw;
-  font-family:Fontspring;
+  font-family: Fontspring;
   color: #242627;
   text-transform: uppercase;
   font-weight: 500;
-  
-
 }
 
 .faq-question h4 {
   font-size: 1.1vw;
-  font-family:actay;
+  font-family: actay;
   color: #242627;
   font-weight: 500;
-  
-
 }
-/* Answer Section */
+
 .faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: all ease 1s;
-
 }
 .faq-answer h5 {
   font-family: Fontspring;
   font-size: 2vw;
   color: #242627;
-
 }
 
 .faq-item.open .faq-answer {
   max-height: 90vh;
   margin-top: 1vw;
 }
-.faq-item.open .faq-answer  p{
+.faq-item.open .faq-answer p {
   margin: 1vw 0;
 }
 
@@ -1221,7 +1146,7 @@ h6 {
   transform: rotate(180deg);
 }
 
-.Contactus{
+.Contactus {
   width: 100%;
   background-color: #174138;
   display: flex;
@@ -1229,45 +1154,45 @@ h6 {
   justify-content: center;
   flex-direction: column;
 }
-.Contactuslanding{
+.Contactuslanding {
   height: 80vh;
   width: 85%;
   margin-top: 6vw;
   display: flex;
   align-items: center;
   margin-bottom: 7vw;
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
-.Contactuslandingleft{
-  height: 100%;
+.Contactuslandingleft {
+  height  : 100%;
   width: 50%;
   padding: 2vw 0;
 }
 
-
-.Contactuslandingleft h5,h4{
+.Contactuslandingleft h5,
+h4 {
   font-family: Fontspring;
   text-transform: uppercase;
   font-size: 1.5vw;
-  color: #FFEA44;
+  color: #ffea44;
   margin-bottom: 1vw;
-  }
-.Contactuslandingleft h4{
+}
+.Contactuslandingleft h4 {
   font-family: Fontspring;
   text-transform: uppercase;
   font-size: 7vw;
-  color: #FFEA44;
+  color: #ffea44;
   line-height: 7vw;
-  }
+}
 
-  .Contactuslandingleft h2{
+.Contactuslandingleft h2 {
   font-family: Fontspring;
   text-transform: uppercase;
   font-size: 3vw;
-  color: #FFEA44;
-  }
-  .Contactuslandingright {
+  color: #ffea44;
+}
+.Contactuslandingright {
   height: 100%;
   width: 50%;
   padding: 3vw 3vw;
@@ -1295,7 +1220,6 @@ h6 {
   border: none;
   z-index: 1;
   overflow: hidden;
-
 }
 
 .image-container img {
@@ -1310,9 +1234,8 @@ h6 {
   pointer-events: none;
 }
 
-
-.FAQS{
-   min-height: 100vh; /* 👈 changed from height to min-height */
+.FAQS {
+  min-height: 100vh; /* 👈 changed from height to min-height */
   width: 100%;
   display: flex;
   align-items: flex-start; /* 👈 ensure children start at top */
@@ -1321,29 +1244,1936 @@ h6 {
   padding: 0 8vw;
 }
 
-.FAQSLeft{
+.FAQSLeft {
   width: 55%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start; /* 👈 start from top */
 }
-.FAQSLeft h2{
-font-family: Fontspring;
+.FAQSLeft h2 {
+  font-family: Fontspring;
   font-size: 4vw;
   font-weight: 500;
-  color: #FFEA44;
+  color: #ffea44;
   line-height: 3.6vw;
   text-transform: uppercase;
   margin-bottom: 4vw;
 }
-.FAQSLeft h5{
-font-family: actay;
+.FAQSLeft h5 {
+  font-family: actay;
   font-size: 1.2vw;
   font-weight: 500;
-  color: #FFEA44;
+  color: #ffea44;
 }
-.FAQSRight{
+.FAQSRight {
   height: 100%;
   width: 100%;
+}
+
+.Footer {
+  width: 100%;
+  background-color: #174138;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 4vw;
+  z-index: 9;
+  position: absolute;
+  overflow: hidden;
+}
+
+.Footer .Footertop {
+  height: 40vh;
+  width: 100%;
+  background-color: #cbe3de;
+  overflow: hidden;
+  padding: 2vw 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5vw;
+  margin-top: 2.5vw;
+}
+
+.Footer .Footertop .Footertopcard {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 1vw;
+}
+
+.Footer .Footertop .Footertopcard h6 {
+  font-family: BASKE10;
+  font-size: 3vw;
+  text-align: center;
+  line-height: 2.2vw;
+  color: #174138;
+  margin-bottom: 1vw;
+}
+
+.Footer .Footertop .Footertopcard p {
+  font-family: HelveticaNeueThinItalic;
+  font-size: 1.5vw;
+  text-align: center;
+  color: #174138;
+}
+
+.Footer .Footerbottom {
+  height: 45vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 2vw 0;
+  justify-content: space-between;
+  border-top: 1px solid rgba(245, 245, 245, 0.462);
+}
+
+.Footer .Footerbottom .Footerbottomleft {
+  height: 100%;
+  width: 43%;
+  color: #cbe3de;
+}
+
+.Footer .Footerbottom .Footerbottomleft h3 {
+  font-family: BASKE10;
+  font-weight: 500;
+  font-size: 5vw;
+  color: #cbe3de;
+  line-height: 4.5vw;
+}
+.Footer .Footerbottom .Footerbottomleft h3 span {
+  font-family: bebasneuepro;
+  font-weight: 600;
+}
+.Footer .Footerbottom .Footerbottomcenter {
+  height: 100%;
+  width: 25%;
+}
+.footer-link {
+  color: #cbe3de;
+  text-decoration: none;
+}
+.Footer .Footerbottom .Footerbottomcenter p {
+  font-family: bebasneuepro;
+  font-size: 1.7vw;
+  font-weight: 500;
+  color: #cbe3de;
+  margin: 0.5vw 0;
+  transition: all ease 1s;
+}
+.Footer .Footerbottom .Footerbottomcenter p:hover {
+  color: #ffea42;
+  cursor: pointer;
+}
+.Footer .Footerbottom .Footerbottomright {
+  height: 100%;
+  width: 25%;
+}
+
+.Footer .Footerbottom .Footerbottomright p {
+  font-family: bebasneuepro;
+  font-size: 1.7vw;
+  font-weight: 500;
+  color: #cbe3de;
+  margin: 0.5vw 0;
+  transition: all ease 1s;
+}
+
+.Footer .Footerbottom .Footerbottomright p:hover {
+  color: #ffea42;
+  cursor: pointer;
+}
+
+.Footerend {
+  width: 100%;
+  overflow: hidden;
+}
+.Footerend h2 {
+  font-family: bebasneuepro;
+  font-size: 32vw;
+  text-transform: uppercase;
+  color: #ffea44;
+  font-weight: 700;
+  display: flex; /* make characters inline-flex */
+  flex-wrap: wrap;
+  gap: 0.2vw; /* slight gap between characters */
+  cursor: pointer;
+}
+
+.Footerend h2 span {
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+
+.Footerend h2 span:hover {
+  transform: translateY(-20%);
+}
+
+@media (max-width: 768px) {
+  .Loader {
+    height: 100vh;
+    opacity: 1;
+  }
+  .Loader .image img {
+    width: 85%;
+  }
+  .Navbar {
+    height: 6vh;
+    width: 100%;
+    padding: 1vw 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 1vw 0;
+  }
+
+  .Navbar .bottom {
+    height: 100%;
+    width: 70%;
+    position: absolute;
+  }
+  .Navbar .bottom .icon {
+    font-size: 8vw;
+  }
+  .Navbar .bottom h2 {
+    font-size: 6vw;
+  }
+  .Navbar .bottom .language {
+    gap: 2vw;
+  }
+  .Navbar .bottom .language h3 {
+    font-family: bebasneuepro;
+    font-size: 5vw;
+  }
+
+  .Navbar .bottom .language .icon {
+    font-family: bebasneuepro;
+    font-size: 4vw;
+  }
+
+  .Navbar .end {
+    opacity: 0;
+  }
+
+  .sidebar {
+    top: 13vw;
+    right: -27vw;
+    left: 0;
+    width: 68%;
+    gap: 1vw;
+  }
+
+  .sidebar a {
+    font-size: 5vw;
+  }
+
+  .Topmen {
+    width: 19%;
+    margin-top: -5vw;
+  }
+  .Topmen img {
+    height: 10vh;
+    transform: rotate(180deg); /* ✅ correct */
+  }
+
+  .Home {
+    width: 100%;
+    position: relative;
+  }
+  .video-container {
+    height: 94vh;
+    width: 100%;
+  }
+  .innertext h3 {
+    font-size: 24vw;
+    line-height: 19vw;
+  }
+
+  .Onstage {
+    width: 100%;
+    background-color: #e6accf;
+  }
+
+  .Onstageheadline {
+    height: 19vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.5vw 0;
+  }
+
+  .Onstageheadline .Onstageheadlineleft h2 {
+    font-size: 10vw;
+    line-height: 1vw;
+  }
+
+  .button {
+    padding: 1.7vw 6.5vw;
+    font-size: 4vw;
+  }
+
+  .Onstagecard {
+    height: 100%;
+    width: 100%;
+    padding: 3vw 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7vw;
+  }
+
+  .Onstagecard .card {
+    margin: 1vw 0;
+    padding: 0 2vw;
+  }
+  .Onstagecard .card .imagecon {
+    height: 51vh;
+  }
+  .Onstagecard .card h2 {
+    font-size: 7.5vw;
+  }
+  .Onstagecard .card h3 {
+    font-size: 6vw;
+    padding: 2vw 0;
+  }
+
+  .eventbottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.3vw;
+  }
+
+  .eventbottom .eventbottomleft {
+    height: 100%;
+    width: 100%;
+    padding: 3vw 5vw;
+    margin-bottom: 9vw;
+  }
+  .textarea .textarealeft,
+  .textarea .textarearight {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3.4vw;
+    text-align: center;
+  }
+
+  .left-text {
+    font-size: 5vw;
+    text-align: center;
+  }
+
+  .eventbottom .eventbottomright {
+    height: 100%;
+    width: 70%;
+    padding: 2vw 3vw;
+    margin: 1vw 2vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
+    margin: 3vw 0;
+  }
+
+  .detailbox h3 {
+    font-size: 2.5vw;
+    margin-bottom: 3vw;
+  }
+  .detailbox h4 {
+    font-size: 2.5vw;
+  }
+  .eventbottomright h2 {
+    font-family: fontspring;
+    text-transform: uppercase;
+    font-size: 5vw;
+    margin: 2vw 0;
+  }
+
+  .InterviewwithJuna {
+    width: 100%;
+  }
+
+  .left-heading {
+    font-size: 6vw;
+    margin: 7vw 0;
+    font-family: Fontspring;
+    font-weight: 500;
+    background-color: rebeccapurple;
+    text-transform: uppercase;
+  }
+
+  .right-heading {
+    font-size: 6vw;
+    margin: 7vw 0;
+    font-family: Fontspring;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .left-paragraph {
+    font-size: 1vw;
+  }
+
+  .sectionleft,
+  h2 {
+    padding: 0 2vw;
+  }
+
+  .Junaslider {
+    width: 100%;
+    padding: 5vw 0;
+    margin-top: 7vh;
+  }
+
+  .impressivetext {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10vw;
+    margin-bottom: 15vw;
+    padding: 0 2vw;
+  }
+
+  .impressivetext h4 {
+    font-size: 7.5vw;
+    line-height: 8vw;
+    margin-bottom: 6vw;
+  }
+
+  .Marquee h3 {
+    font-size: 35vw;
+  }
+
+  .TakeTabbaco {
+    height: 75vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  .TakeTabbacobg {
+    height: 100vh;
+    position: relative;
+  }
+  .overlay {
+    width: 100%;
+    height: 100%;
+  }
+  .TakeTabbacotext {
+    width: 100%;
+    padding: 0 3vw;
+  }
+
+  .TakeTabbacotext h2 {
+    font-size: 12vw;
+    line-height: 11vw;
+    margin-bottom: 5vw;
+  }
+
+  .TakeTabbacotext h4 {
+    font-size: 2.8vw;
+    margin-bottom: 4vw;
+  }
+
+  .Featured {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2vw 2vw;
+    flex-direction: column;
+  }
+
+  .FeaturedJunaHorstman {
+    width: 100%;
+  }
+
+  .Featured .Featuredleft {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 8vw;
+  }
+
+  .Featured .Featuredleft h6 {
+    font-size: 5vw;
+    margin-bottom: 4vw;
+    color: #ffea44;
+  }
+  .Featured .Featuredleft h5 {
+    font-size: 6vw;
+    line-height: 6vw;
+    letter-spacing: 0.1vw;
+    margin-bottom: 4vw;
+  }
+  .Featured .Featuredleft p {
+    font-size: 3vw;
+    margin-bottom: 6vw;
+  }
+  .Featured .Featuredright {
+    height: 100%;
+    width: 100%;
+  }
+
+  .Footer .Footertop {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 5vw;
+    margin-top: 3vw;
+  }
+
+  .Footer .Footertop .Footertopcard {
+    width: 100%;
+  }
+
+  .Footer .Footertop .Footertopcard h6 {
+    font-family: BASKE10;
+    font-size: 4.1vw;
+    line-height: 5vw;
+  }
+
+  .Footer .Footertop .Footertopcard p {
+    font-size: 3.5vw;
+  }
+  .Footer .Footerbottom {
+    height: 45vh;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .Footer .Footerbottom .Footerbottomleft {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7vw;
+  }
+
+  .Footer .Footerbottom .Footerbottomleft h3 {
+    font-size: 9vw;
+  }
+
+  .Footer .Footerbottom .Footerbottomcenter {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .Footer .Footerbottom .Footerbottomcenter p {
+    font-size: 4vw;
+  }
+
+  .Footer .Footerbottom .Footerbottomright {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 3vw;
+    gap: 4vw;
+    margin-top: 3vw;
+  }
+
+  .Footer .Footerbottom .Footerbottomright p {
+    font-size: 4vw;
+  }
+  .Footerend h2 {
+    font-size: 31vw;
+  }
+
+  .Programtickets {
+    width: 100%;
+  }
+  .Programtopheadling {
+    height: 30vh;
+  }
+
+  .Programlanding h1 {
+    font-size: 27vw;
+  }
+
+  .ProgramticketCards {
+    width: 100%;
+    gap: 2vw;
+  }
+
+  .HallRental {
+    width: 100%;
+  }
+
+  .HallRentalLaningtext {
+    height: 30vh;
+    margin-bottom: 5vw;
+  }
+
+  .HallRentalLaningtext h3 {
+    font-size: 9vw;
+    margin-bottom: 3vw;
+  }
+
+  .HallRentalLaningtext h2 {
+    font-size: 8vw;
+    line-height: 7vw;
+  }
+
+  .ConferencesDinners {
+    width: 100%;
+    margin-top: 8vw;
+    flex-direction: column;
+    gap: 13vw;
+    margin-bottom: 11vw;
+    margin-top: 9vw;
+  }
+
+  .ConferencesDinnersleft {
+    width: 100%;
+    padding: 0 3vw;
+  }
+
+  .ConferencesDinnersleft h2 {
+    font-size: 4.3vw;
+    text-align: center;
+    color: #121313;
+  }
+
+  .ConferencesDinnersright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ConferencesDinnersright h2 {
+    font-size: 8vw;
+    margin-bottom: 3vw;
+  }
+  .ConferencesDinnersright h3 {
+    font-size: 3vw;
+  }
+
+  .Ourrental {
+    width: 100%;
+    padding: 0 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .Ourrental h2 {
+    font-size: 11vw;
+    margin-bottom: 3vw;
+  }
+  .Imagehoverarea {
+    margin-top: 4vw;
+    width: 100%;
+  }
+
+  .col {
+    font-size: 3.9vw;
+    width: 100%;
+  }
+
+  .AdviceNeccessery {
+    margin-top: 16vw;
+  }
+
+  .Container {
+    height: 42vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Container h1 {
+    font-size: 10vw;
+    margin: 2vw 0;
+  }
+
+  .Container h1 span {
+    font-size: 10vw;
+  }
+
+  .Container h4 {
+    font-size: 3.5vw;
+    padding: 2vw 0;
+    margin-bottom: 7vw;
+  }
+
+  .whatotherthinkoff {
+    width: 100%;
+    margin-top: 10vw;
+    padding: 1vw 5vw;
+  }
+  .whatotherthinkoff h1 {
+    font-size: 7vw;
+  }
+  .whatotherthinkoffslider {
+    height: 68vh;
+    width: 100%;
+    margin: 4vw 0;
+  }
+
+  .whatotherthinkoffslider {
+    height: 30vh;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide:nth-child(1n) {
+    width: 50%;
+  }
+
+  .swiper-slide h4 {
+    font-size: 2.5vw;
+    margin: 3vw 0;
+    text-align: center;
+  }
+
+  .swiper-slide h5,
+  h6 {
+    font-size: 4vw;
+  }
+
+  .Gallery {
+    position: relative;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .gallerytext {
+    top: 10%;
+    left: 50%;
+    margin-top: 9vw;
+  }
+
+  .gallery-title {
+    font-size: 30vw;
+    line-height: 18vw;
+  }
+
+  .gallery-title span {
+    font-size: 15vw;
+  }
+
+  .Galleryimage {
+    gap: 5vw;
+    margin-top: 55vw;
+  }
+
+  .imagecontainer {
+    height: 40vh;
+    width: 100%;
+  }
+
+  .bustlingtobacco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 1vw;
+    padding: 0 7vw;
+    margin-bottom: 10vw;
+  }
+
+  .bustlingtobacco h5 {
+    font-size: 4.5vw;
+    line-height: 6vw;
+    text-align: center;
+  }
+
+  .Vacanies {
+    width: 100%;
+  }
+
+  .VaciinesHospility {
+    width: 100%;
+    margin-bottom: 10vw;
+  }
+
+  .VaciinesHospility h1 {
+    font-size: 16vw;
+    font-weight: 500;
+  }
+
+  .VacanciesDropdown {
+    width: 100%;
+  }
+  .faq-title {
+    font-size: 4vw;
+  }
+  .faq-icon {
+    font-size: 6vw;
+  }
+  .faq-item h3 {
+    font-size: 3vw;
+  }
+
+  .faq-question h3 {
+    font-size: 3.6vw;
+    margin: 2vw 0;
+  }
+
+  .faq-answer h5 {
+    font-size: 4vw;
+    margin: 3vw 0;
+  }
+  .faq-answer {
+    max-height: 0;
+    margin-bottom: 7vw;
+  }
+  .faq-item.open .faq-answer p {
+    margin: 3vw 0;
+    font-size: 3vw;
+  }
+
+  .Contactuslanding {
+    height: 70vh;
+    width: 100%;
+    margin-top: 25vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 7vw;
+    justify-content: space-between;
+  }
+  .Contactuslandingleft {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .Contactuslandingleft h5,
+  h4 {
+    font-size: 5vw;
+    margin-bottom: 3vw;
+  }
+
+  .Contactuslandingleft h4 {
+    font-size: 8vw;
+  }
+  .Contactuslandingleft h2 {
+    font-size: 10vw;
+  }
+
+  .Contactuslandingright {
+    height: 100%;
+    width: 100%;
+    padding: 13vw 13vw;
+  }
+  .FAQS {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3vw;
+    padding: 0 8vw;
+  }
+
+  .FAQSLeft {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6vw;
+  }
+
+  .FAQSLeft h2 {
+    font-size: 7vw;
+    line-height: 8vw;
+    text-align: center;
+    margin-bottom: 8vw;
+  }
+
+  .FAQSLeft h5 {
+    font-size: 3.2vw;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Loader {
+    height: 100vh;
+    opacity: 1;
+  }
+  .Loader .image img {
+    width: 100%;
+  }
+
+  .Navbar {
+    height: 6vh;
+    width: 100%;
+    padding: 1vw 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 1vw 0;
+  }
+
+  .Navbar .bottom {
+    height: 100%;
+    width: 62%;
+    position: absolute;
+  }
+  .Navbar .bottom .icon {
+    font-size: 6vw;
+  }
+  .Navbar .bottom h2 {
+    font-size: 5vw;
+  }
+  .Navbar .bottom .language {
+    gap: 2vw;
+  }
+  .Navbar .bottom .language h3 {
+    font-size: 3.5vw;
+  }
+
+  .Navbar .bottom .language .icon {
+    font-size: 3.5vw;
+  }
+
+  .Navbar .end {
+    opacity: 0;
+  }
+
+  .sidebar {
+    top: 9vw;
+    right: -35vw;
+    left: 0;
+    width: 62%;
+    gap: 1vw;
+  }
+
+  .sidebar a {
+    font-size: 5vw;
+  }
+  .Topmen {
+    width: 19%;
+    margin-top: -5vw;
+  }
+  .Topmen img {
+    height: 12vh;
+  }
+
+  .Topmen img:hover {
+    height: 12vh;
+    margin-top: 5vw;
+  }
+
+  .video-container {
+    height: 98vh;
+  }
+
+  .innertext h3 {
+    font-size: 26vw;
+    line-height: 21vw;
+  }
+
+  .Onstage {
+    width: 100%;
+    background-color: #e6accf;
+  }
+
+  .Onstageheadline {
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.5vw 0;
+  }
+
+  .Onstageheadline .Onstageheadlineleft h2 {
+    font-size: 11vw;
+    line-height: 2vw;
+  }
+
+  .button {
+    padding: 1.7vw 6.5vw;
+    font-size: 3.8vw;
+    font-weight: 500;
+  }
+
+  .Onstagecard {
+    height: 100%;
+    width: 100%;
+    padding: 3vw 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7vw;
+  }
+  .eventbottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.3vw;
+  }
+
+  .eventbottom .eventbottomleft {
+    height: 100%;
+    width: 100%;
+    padding: 3vw 5vw;
+    margin-bottom: 9vw;
+  }
+  .textarea .textarealeft,
+  .textarea .textarearight {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3.4vw;
+    text-align: center;
+  }
+
+  .left-text {
+    font-size: 4.5vw;
+    text-align: center;
+  }
+
+  .eventbottom .eventbottomright {
+    height: 100%;
+    width: 70%;
+    padding: 2vw 3vw;
+    margin: 1vw 2vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
+    margin: 3vw 0;
+  }
+
+  .detailbox h3 {
+    font-size: 3vw;
+    margin-bottom: 3vw;
+  }
+  .detailbox h4 {
+    font-size: 3vw;
+  }
+  .eventbottomright h2 {
+    font-family: fontspring;
+    text-transform: uppercase;
+    font-size: 5vw;
+    margin: 2vw 0;
+  }
+  .InterviewwithJuna {
+    width: 100%;
+  }
+
+  .left-heading {
+    font-size: 6vw;
+    margin: 7vw 0;
+    font-family: Fontspring;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .right-heading {
+    font-size: 6vw;
+    margin: 7vw 0;
+    font-family: Fontspring;
+    font-weight: 500;
+  background-color: r;
+    text-transform: uppercase;
+  }
+
+  .left-paragraph {
+    font-size: 1vw;
+  }
+
+  .sectionleft,
+  h2 {
+    padding: 0 2vw;
+  }
+
+  .Junaslider {
+    width: 100%;
+    padding: 5vw 0;
+    margin-top: 7vh;
+  }
+
+  .Onstagecard .card {
+    margin: 1vw 0;
+    padding: 0 2vw;
+  }
+  .Onstagecard .card .imagecon {
+    height: 54vh;
+  }
+  .Onstagecard .card h2 {
+    font-size: 8vw;
+  }
+  .Onstagecard .card h3 {
+    font-size: 6.5vw;
+    padding: 1vw 0;
+  }
+
+  .impressivetext {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10vw;
+    margin-bottom: 15vw;
+    padding: 0 2vw;
+  }
+
+  .impressivetext h4 {
+    font-size: 7.5vw;
+    line-height: 8vw;
+    margin-bottom: 8vw;
+  }
+  .Marquee h3 {
+    font-size: 37vw;
+  }
+
+  .TakeTabbaco {
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  .TakeTabbacobg {
+    height: 100vh;
+    position: relative;
+  }
+  .overlay {
+    width: 100%;
+    height: 100%;
+  }
+  .TakeTabbacotext {
+    width: 100%;
+    padding: 0 3vw;
+  }
+
+  .TakeTabbacotext h2 {
+    font-size: 11vw;
+    line-height: 10vw;
+    margin-bottom: 5vw;
+  }
+
+  .TakeTabbacotext h4 {
+    font-size: 3.2vw;
+    margin-bottom: 4vw;
+  }
+
+  .Featured {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3vw 2vw;
+    flex-direction: column;
+  }
+
+  .FeaturedJunaHorstman {
+    width: 100%;
+  }
+
+  .Featured .Featuredleft {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 9vw;
+    margin-top: 6vw;
+  }
+
+  .Featured .Featuredleft h6 {
+    font-size: 7vw;
+    margin-bottom: 4vw;
+    color: #ffea44;
+  }
+  .Featured .Featuredleft h5 {
+    font-size: 6vw;
+    line-height: 6vw;
+    letter-spacing: 0.1vw;
+    margin-bottom: 4vw;
+  }
+  .Featured .Featuredleft p {
+    font-size: 3.3vw;
+    margin-bottom: 6vw;
+  }
+  .Featured .Featuredright {
+    height: 100%;
+    width: 100%;
+  }
+
+  .Footer .Footertop {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 5vw;
+    margin-top: 3vw;
+  }
+
+  .Footer .Footertop .Footertopcard {
+    width: 100%;
+  }
+
+  .Footer .Footertop .Footertopcard h6 {
+    font-family: BASKE10;
+    font-size: 5vw;
+    line-height: 5vw;
+    margin-bottom: 3vw;
+  }
+
+  .Footer .Footertop .Footertopcard p {
+    font-size: 3.3vw;
+  }
+  .Footer .Footerbottom {
+    height: 45vh;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .Footer .Footerbottom .Footerbottomleft {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7vw;
+  }
+
+  .Footer .Footerbottom .Footerbottomleft h3 {
+    font-size: 9vw;
+  }
+
+  .Footer .Footerbottom .Footerbottomcenter {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 4vw;
+    gap: 0.5vw;
+    margin-top: 3vw;
+  }
+
+  .Footer .Footerbottom .Footerbottomcenter p {
+    font-size: 4vw;
+    text-align: center;
+  }
+
+  .Footer .Footerbottom .Footerbottomright {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 4vw;
+    gap: 0.5vw;
+    margin-top: 3vw;
+  }
+
+  .Footer .Footerbottom .Footerbottomright p {
+    font-size: 4vw;
+    text-align: center;
+  }
+  .Footerend h2 {
+    font-size: 31vw;
+  }
+
+  .Programtickets {
+    width: 100%;
+  }
+  .Programtopheadling {
+    height: 38vh;
+  }
+
+  .Programlanding h1 {
+    font-size: 29vw;
+  }
+
+  .ProgramticketCards {
+    width: 100%;
+    gap: 2vw;
+  }
+
+  .HallRental {
+    width: 100%;
+  }
+
+  .HallRentalLaningtext {
+    height: 45vh;
+    margin-bottom: 5vw;
+  }
+
+  .HallRentalLaningtext h3 {
+    font-size: 9vw;
+    margin-bottom: 2vw;
+  }
+
+  .HallRentalLaningtext h2 {
+    font-size: 7vw;
+    line-height: 7vw;
+  }
+
+  .ConferencesDinners {
+    width: 100%;
+    margin-top: 8vw;
+    flex-direction: column;
+    gap: 12vw;
+    margin-bottom: 16vw;
+    margin-top: 9vw;
+  }
+
+  .ConferencesDinnersleft {
+    width: 100%;
+    padding: 0 3vw;
+  }
+
+  .ConferencesDinnersleft h2 {
+    font-size: 4.4vw;
+    text-align: center;
+    color: #121313;
+  }
+
+  .ConferencesDinnersright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ConferencesDinnersright h2 {
+    font-size: 11vw;
+    margin-bottom: 3vw;
+  }
+  .ConferencesDinnersright h3 {
+    font-size: 3.8vw;
+    margin: 1vw 0;
+  }
+
+  .Ourrental {
+    width: 100%;
+    padding: 0 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .Ourrental h2 {
+    font-size: 12vw;
+    margin-bottom: 3vw;
+  }
+  .Imagehoverarea {
+    margin-top: 4vw;
+    width: 100%;
+  }
+
+  .col {
+    font-size: 3.9vw;
+    width: 100%;
+  }
+
+  .AdviceNeccessery {
+    margin-top: 16vw;
+  }
+
+  .Container {
+    height: 47vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Container h1 {
+    font-size: 8vw;
+    margin: 2vw 0;
+  }
+
+  .Container h1 span {
+    font-size: 8vw;
+  }
+
+  .Container h4 {
+    font-size: 4vw;
+    padding: 2vw 0;
+    text-align: center;
+    margin-bottom: 5vw;
+  }
+
+  .whatotherthinkoff {
+    width: 100%;
+    margin-top: 10vw;
+    padding: 1vw 5vw;
+  }
+  .whatotherthinkoff h1 {
+    font-size: 8vw;
+  }
+  .whatotherthinkoffslider {
+    height: 75vh;
+    width: 100%;
+    margin: 4vw 0;
+  }
+
+  .whatotherthinkoffslider {
+    height: 36vh;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide:nth-child(1n) {
+    width: 50%;
+  }
+
+  .swiper-slide h4 {
+    font-size: 2.6vw;
+    margin: 3vw 0;
+    text-align: center;
+  }
+
+  .swiper-slide h5,
+  h6 {
+    font-size: 4vw;
+  }
+
+  .Gallery {
+    position: relative;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .gallerytext {
+    top: 10%;
+    left: 50%;
+    margin-top: 9vw;
+  }
+
+  .gallery-title {
+    font-size: 32vw;
+    line-height: 18vw;
+  }
+
+  .gallery-title span {
+    font-size: 13vw;
+  }
+
+  .Galleryimage {
+    gap: 5vw;
+    margin-top: 55vw;
+  }
+
+  .imagecontainer {
+    height: 50vh;
+    width: 100%;
+  }
+
+  .bustlingtobacco {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 60%;
+    margin: 0 6vw;
+    margin-bottom: 10vw;
+  }
+
+  .bustlingtobacco h5 {
+    font-size: 4.2vw;
+    line-height: 4.2vw;
+    font-weight: 500;
+    font-family: Fontspring;
+    color: #ffea44;
+  }
+  .Vacanies {
+    width: 100%;
+  }
+
+  .VaciinesHospility {
+    width: 100%;
+    margin-bottom: 10vw;
+  }
+
+  .VaciinesHospility h1 {
+    font-size: 14vw;
+    font-weight: 500;
+  }
+
+  .VacanciesDropdown {
+    width: 100%;
+  }
+  .faq-title {
+    font-size: 5vw;
+  }
+  .faq-icon {
+    font-size: 7vw;
+  }
+  .faq-item h3 {
+    font-size: 12vw;
+  }
+
+  .faq-question h3 {
+    font-size: 4.3vw;
+    margin: 2vw 0;
+    
+  }
+
+  .faq-answer h5 {
+    font-size: 6vw;
+    margin: 3vw 0;
+  }
+  .faq-answer {
+    max-height: 0;
+    margin-bottom: 7vw;
+  }
+  .faq-item.open .faq-answer p {
+    margin: 3vw 0;
+    font-size: 4.2vw;
+  }
+
+  .Contactuslanding {
+    width: 100%;
+    margin-top: 25vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10vw;
+    justify-content: space-between;
+  }
+  .Contactuslandingleft {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .Contactuslandingleft h5,
+  h4 {
+    font-size: 5vw;
+    margin-bottom: 3vw;
+  }
+
+  .Contactuslandingleft h4 {
+    font-size: 8vw;
+  }
+  .Contactuslandingleft h2 {
+    font-size: 10vw;
+  }
+
+  .Contactuslandingright {
+    height: 100%;
+    width: 100%;
+    padding: 13vw 13vw;
+  }
+  .FAQS {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3vw;
+  }
+
+  .FAQSLeft {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6vw;
+  }
+
+  .FAQSLeft h2 {
+    font-size: 8vw;
+    line-height: 8vw;
+    text-align: center;
+    margin-bottom: 8vw;
+  }
+
+  .FAQSLeft h5 {
+    font-size: 3.8vw;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+
+.Loader .image img {
+  width: 100%;
+}
+
+.Navbar .bottom {
+    width: 37%;
+
+}
+
+.Navbar .bottom .icon {
+  font-size: 3vw;
+}
+.Navbar .bottom h2 {
+  font-size: 2.2vw;
+}
+
+.Navbar .bottom .language h3 {
+  font-size: 1.9vw;
+}
+
+.Navbar .bottom .language .icon {
+  font-size: 1.9vw;
+}
+
+
+.Navbar .end {
+  width: 18%;
+
+}
+.Navbar .end .ownevent {
+  width: 58%;
+}
+.Navbar .end .ownevent h6 {
+  font-size: 1.5vw;
+}
+
+
+.Navbar .end .circle-arrow {
+  width: 25%;
+  font-size: 1.6vw;
+  }
+.sidebar {
+  top: 5vw;
+  width: 36.5%;
+}
+.innertext h3 {
+  font-size: 15vw;
+  line-height: 12vw;
+}
+
+.Onstageheadline {
+  height: 24vh;
+  width: 100%;
+  margin-bottom: 4vw;
+}
+.Onstageheadline .Onstageheadlineleft h2 {
+  font-size: 5vw;
+}
+
+.button {
+  padding: 1.1vw 3vw;
+  font-size: 1.6vw;
+}
+
+.Onstagecard .card h2 {
+  font-size: 2.6vw;
+}
+
+.Onstagecard .card h3 {
+  font-size: 2.2vw;
+}
+
+
+
+
+
+.eventbottomright h2 {
+  font-size: 3.6vw;
+  margin: 2vw 0;
+}
+
+.eventbottom .eventbottomleft {
+  height: 100%;
+  width: 60%;
+  padding: 3vw 0;
+}
+
+.textarea .textarealeft,
+.textarea .textarearight {
+font-size: 1.5vw;
+
+}
+.detailbox h3 {
+  font-size: 1.6vw;
+}
+
+
+
+.detailbox h4 {
+  font-size: 1.4vw;
+
+
+}
+
+
+.InterviewwithJuna {
+  width: 100%;
+}
+
+.left-text {
+  font-size: 1.6rem;
+}
+
+.impressivetext {
+  width: 70%;
+  margin-top: 7vw;
+  margin-bottom: 7vw;
+}
+.impressivetext h4 {
+  font-size: 5vw;
+  line-height: 4vw;
+  margin-bottom: 3.5vw;
+}
+
+
+.Marquee h3 {
+  font-size: 31vw;
+}
+
+.Featured .Featuredleft h6 {
+  font-size: 2.1vw;
+}
+
+.Featured .Featuredleft h5 {
+  font-size: 4.9vw;
+}
+
+.Featured .Featuredleft p {
+  font-size: 1.4vw;
+}
+
+.TakeTabbaco {
+  height: 135vh;
+}
+
+.TakeTabbacobg {
+  height: 145vh;
+}
+
+.TakeTabbacotext h2 {
+  font-size: 6vw;
+}
+
+
+.TakeTabbacotext h4 {
+  font-size: 1.8vw;
+}
+
+.Footer .Footertop .Footertopcard h6 {
+  font-size: 3.2vw;
+  line-height: 3vw;
+  margin-bottom: 1vw;
+}
+.Footer .Footertop .Footertopcard p {
+  font-size: 1.6vw;
+}
+.Footer .Footerbottom {
+  height: 40vh;
+  padding: 2vw 1vw;
+}
+
+
+.Footer .Footerbottom .Footerbottomleft h3 {
+  font-size: 5.3vw;
+  line-height: 4.8vw;
+}
+
+.Footer .Footerbottom .Footerbottomcenter p {
+  font-size: 2vw;
+}
+
+
+.Footer .Footerbottom .Footerbottomright p {
+  font-size: 2vw;
+}
+
+.Footerend h2 {
+  font-size: 33vw;
+}
+
+
+.Programtopheadling {
+  height: 50vh;
+}
+
+.Programlanding h1 {
+    font-size: 16vw;
+}
+.HallRentalLaningtext {
+  height: 63vh;
+}
+
+
+.HallRentalLaningtext h3 {
+  font-size: 3.2vw;
+  margin-bottom: 1vw;
+}
+
+
+.HallRentalLaningtext h2 {
+  font-size: 6.5vw;
+  line-height: 5.4vw;
+}
+
+.ConferencesDinners {
+  width: 100%;
+  gap: 10vw;
+  margin-bottom: 10vw;
+}
+
+.ConferencesDinnersright h2 {
+  font-size: 3vw;
+}
+
+.ConferencesDinnersright h3 {
+  font-size: 1.6vw;
+}
+.Container {
+  height: 45vh;
+  width: 80%;
+  padding: 3vw 4vw;
+
+}
+.Container h1 {
+  font-size: 6vw;
+}
+.Container h1 span {
+  font-size: 6vw;
+}
+
+.Container h4 {
+  font-size: 1.5vw;
+  margin-bottom: 2vw;
+}
+
+
+
+.whatotherthinkoff h1 {
+  font-size: 5.3vw;
+}
+
+.whatotherthinkoffslider {
+  height: 68vh;
+  width: 100%;
+  margin: 4vw 0;
+}
+
+
+.swiper-slide {
+  width: 46%;
+}
+
+
+.swiper-slide h4 {
+  font-size: 1.8vw;
+}
+
+
+.swiper-slide h5,
+h6 {
+  font-size: 2vw;
+}
+.gallerytext {
+  position: fixed; /* absolute ki jagah fixed */
+  top: 10%; /* jahan rakhna hai text ko */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* images ke neeche */
+  width: 100%;
+  text-align: center;
+  margin-top: 13vw;
+}
+.gallery-title {
+  font-size: 18vw;
+  line-height: 8vw;
+}
+
+.imagecontainer {
+  height: 65vh;
+  width: 64%;
+}
+  
+.VaciinesHospility h1 {
+  font-size: 10vw;
+}
+
+
+.FAQSLeft h2 {
+  font-size: 4.5vw;
+  line-height: 4.4vw;
+}
+.FAQSLeft h5 {
+  font-size: 1.5vw;
+}
+
+.faq-answer h5 {
+  font-size: 2.7vw;
+  }
+.faq-icon {
+  font-size: 2.5rem;
+}
+
+  .faq-answer h5 {
+    font-size: 3.2vw;
+  }
+  .faq-answer {
+    max-height: 0;
+  }
+  .faq-item.open .faq-answer p {
+      font-size: 1.8vw;
+  }
+
+.faq-question h3 {
+  font-size: 2.2vw;
+
+}
+  .left-heading {
+    font-size: 3vw;
+    margin: 2vw 0;
+    font-family: Fontspring;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+ 
+  .right-heading {
+    font-size: 3vw;
+    margin: 2vw 0;
+    font-family: Fontspring;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+
 }

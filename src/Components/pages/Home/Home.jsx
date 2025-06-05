@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Homelanding from "./Homelandingpage/Homelanding";
 import Onstage from "./Onstage/Onstage";
-import ImpressiveAmsterdam from "./impressiveAmsterdam/impressiveAmsterdam.Jsx";
+import ImpressiveAmsterdam from "./ImpressiveAmsterdam/ImpressiveAmsterdam.Jsx";
 import Featured from "./Featured/Featured";
 import TakeTabbaco from "./TakeTabbaco/TakeTabbaco";
 import Loader from "../../Loader/Loader";
@@ -21,7 +21,7 @@ Also on It stage bee tobacco?"
       />
 
       <Featured
-        imageUrl="http://localhost:5173/src/assets/imageandvideos/GALLERY.jpg"
+        imageUrl="https://tobacco.nl/wp-content/uploads/2024/11/Uitgelicht-Juna-Horstmans-300x400.jpg"
         tittle="Featured"
         Heading="Art on the facade of
      TOBACCO Theater by Juna Horstmans."

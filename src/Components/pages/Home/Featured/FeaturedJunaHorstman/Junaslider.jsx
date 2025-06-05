@@ -1,17 +1,8 @@
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const obj = [
-  { img: "https://tobacco.nl/wp-content/uploads/2024/11/8-800x450.jpg" },
-  { img: "https://tobacco.nl/wp-content/uploads/2024/12/Uitgelicht-Juna-Horstmans-1-600x800.jpg" },
-  { img: "https://tobacco.nl/wp-content/uploads/2024/11/9-800x450.jpg" },
-  { img: "https://tobacco.nl/wp-content/uploads/2024/11/8-800x450.jpg" },
-  { img: "https://tobacco.nl/wp-content/uploads/2024/12/Uitgelicht-Juna-Horstmans-1-600x800.jpg" },
-  { img: "https://tobacco.nl/wp-content/uploads/2024/11/9-800x450.jpg" },
 
-];
-
-const Junaslider = () => {
+const Junaslider = ({slider}) => {
   return (
     <div className='Junaslider'>
       <Swiper
@@ -21,7 +12,7 @@ const Junaslider = () => {
         className="mySwiper"
       >
         {
-          obj.map((elem, index) => (
+          slider.map((elem, index) => (
             <SwiperSlide key={index} >
              <img src={elem.img} alt="" />
             </SwiperSlide>

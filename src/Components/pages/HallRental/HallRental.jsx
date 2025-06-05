@@ -65,9 +65,7 @@ const HallRental = ({ firstHeading = "Our", secondHeading = "Halls" }) => {
         Heading={[firstHeading, secondHeading]}
         hoverData={hallRentalHoverData}
         HeadingColor="black"
-        Hovercolor="black" // <- color applied here
-        // ✅ yeh alag prop hai
-        // Red color
+        Hovercolor="black"
       />
 
       <AdviceNeccessery />
@@ -79,7 +77,7 @@ const HallRental = ({ firstHeading = "Our", secondHeading = "Halls" }) => {
         paragraph="In the hidden catacombs of our historic city monument you will find the catering kitchen, a culinary paradise where fresh, local ingredients are transformed into tasteful creations. Under the inspiring leadership of Michelin chef Dennis Huwaë, TOBACCO lovingly serves breakfast, lunch or dinner at the highest level. We also work with other caterers who know exactly how to set your taste buds on fire, each with their own unique specialty. We are happy to think along with you to find the perfect match. Do you prefer to have your own caterer in mind? No problem, with a catering fee that is of course also possible! For more information, see our most recent food book below."
         buttonText="Take a look at our foodbook"
         buttonLink="https://indd.adobe.com/view/2dad5614-e468-4e62-a846-4ebc60fbc649"
-        reverse={true}
+        reverse={false}
       />
 
       <TakeTabbaco

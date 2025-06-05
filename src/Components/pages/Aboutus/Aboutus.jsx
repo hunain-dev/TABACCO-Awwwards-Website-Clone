@@ -40,13 +40,13 @@ const Aboutus = ({ firstHeading = "Our", secondHeading = "Team" }) => {
   return (
     <div className="Aboutus">
       <Loader />
-      <HallRentalLaning
-        imageUrl="https://tobacco.nl/wp-content/uploads/2024/10/gallery_img_11.jpg"
-        title="About Tobacco theatre"
-        Heading="A look behind the scenes"
-        showButton={false}
-        textColor="#FFEA44" // ✅ ya "black", "red", "#333"
-      />
+        <HallRentalLaning
+          imageUrl="https://tobacco.nl/wp-content/uploads/2024/10/gallery_img_11.jpg"
+          title="About Tobacco theatre"
+          Heading="A look behind the scenes"
+          showButton={false}
+          textColor="#FFEA44" // ✅ ya "black", "red", "#333"
+        />
 
       <BustlingTobacco />
 
@@ -60,7 +60,7 @@ TOBACCO Theater wants to be the destination for the curious visitor and be known
         buttonText="Check out the TOBACCO Magazine"
         buttonLink="https://indd.adobe.com/view/805ed071-f8df-42e0-945f-3c701b208567"
         showBackground={false} // 👈 Background remove ho jayega
-        reverse={true} // 👈 This makes image right, text left
+        reverse={false} 
       />
       <div>
         <Featured
@@ -83,7 +83,7 @@ TOBACCO Theater wants to be the destination for the curious visitor and be known
         buttonText="View our foodbook"
         buttonLink="https://indd.adobe.com/view/2dad5614-e468-4e62-a846-4ebc60fbc649"
         showBackground={false} // 👈 Background remove ho jayega
-        reverse={true} // 👈 This makes image right, text left
+        reverse={false} // 👈 This makes image right, text left
       />
 
       <Ourrental
@@ -93,7 +93,7 @@ TOBACCO Theater wants to be the destination for the curious visitor and be known
         Hovercolor="white"
       />
 
-      <div style={{ marginTop: "18vh" }}>
+      <div style={{ marginTop: "9vh" }}>
         <TakeTabbaco
           imageUrl="https://tobacco.nl/wp-content/uploads/2024/11/rich_content-1600x889.jpg"
           heading="Founding couple you for"
@@ -111,7 +111,7 @@ TOBACCO Theater wants to be the destination for the curious visitor and be known
           Heading="Eye for the future"
           paragraph="Our building is steeped in history, but we also look to the future with a determined eye. Sustainability is not a choice for us, but a responsibility. Although there is still a long way to go, we are taking more and more concrete steps to reduce our ecological footprint, without ever compromising on quality or experience. We consciously choose local suppliers, invest in energy-efficient solutions and work with sustainable partners such asGreenbookingsandOscar Circular. That goes hand in hand with our love for Amsterdam. Want to know more about the history of TOBACCO Theater and the Nes? Read more below."
           buttonText="Give into the past"
-          buttonLink="https://tobacco.nl/en/art-on-the-facade-of-tobacco-theater-by-juna-horstmans/"
+          buttonLink="/"
           showBackground={false} // 👈 Background remove ho jayega
           reverse={false} // 👈 This makes image right, text left
         />

@@ -17,7 +17,7 @@ const Featured = ({
         showBackground ? "with-background" : "no-background"
       } ${reverse ? "reverse" : ""}`}
     >
-      <div className="Featuredleft" data-scroll data-scroll-speed="0.1">
+      <div className="Featuredleft" >
         <h6>{tittle}</h6>
         <h5>{Heading}</h5>
         <p>{paragraph}</p>
@@ -34,8 +34,8 @@ const Featured = ({
           ))}
       </div>
 
-      <div className="Featuredright" data-scroll data-scroll-speed="0.1">
-        <img src={imageUrl} alt="Featured" />
+      <div className="Featuredright" >
+        <img src={imageUrl}  />
       </div>
     </div>
   );

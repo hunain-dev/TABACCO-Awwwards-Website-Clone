@@ -1,11 +1,11 @@
 import React from 'react'
 import Impressivetext from './impressivetext'
-import ImpressiveAmsterdamoverview from './impressiveAmsterdamoverview'
+import ImpressiveOverview from './ImpressiveOverview'
 const ImpressiveAmsterdam = () => {
   return (
     <div className='impressiveAmsterdam'>
       <Impressivetext/>
-      <ImpressiveAmsterdamoverview/>
+      <ImpressiveOverview/>
     </div>
   )
 }

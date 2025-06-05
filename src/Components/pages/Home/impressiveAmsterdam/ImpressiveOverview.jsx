@@ -1,7 +1,7 @@
  import { motion } from 'framer-motion';
 
 
-const impressiveAmsterdamoverview = () => {
+const ImpressiveOverview = () => {
   return (
     <div className="impressiveAmsterdamoverview">
           <div data-scroll data-scroll-speed='0.2' className="Marquee">
@@ -24,4 +24,4 @@ const impressiveAmsterdamoverview = () => {
   )
 }
 
-export default impressiveAmsterdamoverview
+export default ImpressiveOverview

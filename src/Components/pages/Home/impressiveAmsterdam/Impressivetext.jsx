@@ -6,7 +6,7 @@ const Impressivetext = () => {
     <div className='impressivetext'>
         <h4>An impressive gem in the heart of Amsterdam. Industrial, fresh, innovative and the love for detail and history oozes from the walls!
 </h4>
- <Link><Button text='Gallery' to='/Gallery' /></Link>
+ <Link className="Link"><Button text='Gallery' to='/Gallery' /></Link>
 
       
     </div>

@@ -8,7 +8,7 @@ const Onstageheadline = ({ title, buttonText,color }) => {
         <h2 style={{ color: color }}>{title}</h2>
       </div>
       <div className="Onstageheadlineright">
-        <Button text={buttonText} to="/" />   
+        <Button text={buttonText} to="/Programticket" />   
       </div>
     </div>
   );  

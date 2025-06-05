@@ -22,6 +22,10 @@ useEffect(() => {
     setOpenmenu(prevState => !prevState); 
   };
 
+const handleLinkClick = () => {
+  setOpenmenu(false);
+};
+
 
  useEffect(() => {
     if (Openmenu) {
@@ -53,21 +57,21 @@ useEffect(() => {
         <div className="end">
           
             <div className="ownevent">
-            <Link to="/Hallrental"><h6>Business Rental</h6></Link>    
+            <Link to="/Hallrental"><h6>Business</h6></Link>    
             </div>
             <div className="circle-arrow">
-                <CiLocationArrow1 />
+             <Link to="/Hallrental"> <CiLocationArrow1 /></Link>  
                 </div>
         </div>
       
       {Openmenu && (
         <div className='sidebar'>
-          <h1><Link to='/Programticket'>Program ticket</Link></h1>
-         <h1><Link to='/HallRental'>Hall Rental</Link></h1>
- <h1><Link to='/Gallery'>Gallery</Link></h1>
-         <h1><Link to='/Aboutus'>About us</Link></h1> 
-         <h1><Link to='/Vacanies'>Vacanies</Link></h1> 
-         <h1><Link to='/Contactus'>Contact</Link></h1> 
+          <h1><Link to='/Programticket' onClick={handleLinkClick}>Program ticket</Link></h1>
+         <h1><Link to='/HallRental' onClick={handleLinkClick}>Hall Rental</Link></h1>
+ <h1><Link to='/Gallery' onClick={handleLinkClick}>Gallery</Link></h1>
+         <h1><Link to='/Aboutus' onClick={handleLinkClick}>About us</Link></h1> 
+         <h1><Link to='/Vacanies' onClick={handleLinkClick}>Vacanies</Link></h1> 
+         <h1><Link to='/Contactus' onClick={handleLinkClick}>Contact</Link></h1> 
              
          
         </div>
