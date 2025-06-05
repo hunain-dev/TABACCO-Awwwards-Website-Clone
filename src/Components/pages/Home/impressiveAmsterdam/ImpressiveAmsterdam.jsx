@@ -1,6 +1,6 @@
 import React from 'react'
-import Impressivetext from './impressivetext'
 import ImpressiveOverview from './ImpressiveOverview'
+import Impressivetext from './Impressivetext'
 const ImpressiveAmsterdam = () => {
   return (
     <div className='impressiveAmsterdam'>

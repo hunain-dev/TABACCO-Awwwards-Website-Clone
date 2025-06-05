@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Homelanding from "./Homelandingpage/Homelanding";
 import Onstage from "./Onstage/Onstage";
-import ImpressiveAmsterdam from "./ImpressiveAmsterdam/ImpressiveAmsterdam.Jsx";
 import Featured from "./Featured/Featured";
 import TakeTabbaco from "./TakeTabbaco/TakeTabbaco";
 import Loader from "../../Loader/Loader";
+import ImpressiveAmsterdam from "./ImpressiveAmsterdam/ImpressiveAmsterdam.Jsx";
 const Home = () => {
   return (
     <div className="Home">
