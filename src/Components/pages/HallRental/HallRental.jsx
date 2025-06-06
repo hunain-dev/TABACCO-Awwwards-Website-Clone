@@ -3,10 +3,10 @@ import HallRentalLaning from "./HallRentalLaning/HallRentalLaning";
 import ConferencesDinners from "./ConferencesDinners/ConferencesDinners";
 import Ourrental from "./Ourrental/Ourrental";
 import AdviceNeccessery from "./AdviceNeccessery/AdviceNeccessery";
-import Whatotherthinkoff from "./Whatotherthinkoff/Slider.jsx";
 import Featured from "../Home/Featured/Featured.jsx";
 import TakeTabbaco from "../Home/TakeTabbaco/TakeTabbaco.jsx";
 import Loader from "../../Loader/Loader.jsx";
+import WhatOtherThink from "./WhatOtherThink/WhatOtherThink.jsx";
 
 const hallRentalHoverData = {
   textleft: [
@@ -69,7 +69,7 @@ const HallRental = ({ firstHeading = "Our", secondHeading = "Halls" }) => {
       />
 
       <AdviceNeccessery />
-      <Whatotherthinkoff />
+      <WhatOtherThink   />
       <Featured
         imageUrl="https://tobacco.nl/wp-content/uploads/2024/11/zaalverhuur_split-1.jpg"
         tittle="Catering"

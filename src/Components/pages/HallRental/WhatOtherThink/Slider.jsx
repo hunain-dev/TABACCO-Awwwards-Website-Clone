@@ -1,6 +1,8 @@
 import React from 'react'
-import Slider from './Whatotherthinkoffslider'
-const Whatotherthinkoff = () => {
+import Slider from './WhatOtherThink'
+
+
+const Slider = () => {
   return (
     <div className='whatotherthinkoff'>
         <h1>What others think of us.</h1>
@@ -9,5 +11,5 @@ const Whatotherthinkoff = () => {
   )
 }
 
-export default Whatotherthinkoff
+export default Slider
  

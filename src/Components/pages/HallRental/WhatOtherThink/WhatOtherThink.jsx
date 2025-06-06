@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination"; 
 import "swiper/css/navigation"; 
 
-const Slider = () => {
+const WhatOtherThink = () => {
 
     const obj = [
         {
@@ -56,7 +56,7 @@ const Slider = () => {
       <Swiper
         slidesPerView={'auto'}
         spaceBetween={30}
-      
+      Slider
         modules={[Pagination]}
         className="mySwiper"
       >
@@ -81,4 +81,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default WhatOtherThink;
