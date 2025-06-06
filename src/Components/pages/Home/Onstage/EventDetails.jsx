@@ -1,9 +1,9 @@
 import { useLocation, useParams } from "react-router-dom";
 import { Homeonstagecard, Progamticketcard } from "./Carddata";
 import HallRentalLaning from "../../HallRental/HallRentalLaning/HallRentalLaning";
-import Textarea from "../Featured/FeaturedJunaHorstman/textarea";
 import Button from "../Button/Button";
 import Onstagecard from "./Onstagecard";
+import ImpressiveTextArea from "../ImpressiveTextArea/ImpressiveTextArea";
 
 const EventDetails = () => {
   const { title } = useParams();
@@ -52,7 +52,7 @@ const EventDetails = () => {
       <div className="eventbottom">
         <div className="eventbottomleft">
           <div>
-            <Textarea
+            <ImpressiveTextArea
               textColor="black"
              leftData={leftArray}
               rightData={rightArray}

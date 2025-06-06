@@ -1,8 +1,8 @@
 import React from "react";
 import Loader from "../../../../Loader/Loader";
 import HallRentalLaning from "../../../HallRental/HallRentalLaning/HallRentalLaning";
-import Textarea from "./textarea";
 import Junaslider from "./Junaslider";
+import FeaturedTextarea from "./FeaturedTextarea";
 const FeaturedJunaHorstman = () => {
   const interviewsleft = [
     {
@@ -78,7 +78,7 @@ const FeaturedJunaHorstman = () => {
         textColor="white"
         Heading={"Founding Couple you For"}
       />
-      <Textarea
+      <FeaturedTextarea
         textColor="white"
         leftData={interviewsleft}
         rightData={interviewsright}

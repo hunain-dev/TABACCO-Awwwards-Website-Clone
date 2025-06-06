@@ -1,4 +1,4 @@
-const Textarea = ({ leftData = [], rightData = [], textColor = "black" }) => {
+const FeaturedTextarea = ({ leftData = [], rightData = [], textColor = "black" }) => {
   return (
     <div className="textarea">
       <div className="textarealeft">
@@ -54,4 +54,4 @@ const Textarea = ({ leftData = [], rightData = [], textColor = "black" }) => {
   );
 };
 
-export default Textarea;
+export default FeaturedTextarea;

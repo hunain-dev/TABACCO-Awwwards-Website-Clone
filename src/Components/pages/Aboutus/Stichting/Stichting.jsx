@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "../../../Loader/Loader";
 import HallRentalLaning from "../../HallRental/HallRentalLaning/HallRentalLaning";
-import Textarea from "../../Home/Featured/FeaturedJunaHorstman/textarea";
+import Textarea from "../../Home/Featured/FeaturedJunaHorstman/FeaturedTextarea";
 import Junaslider from "../../Home/Featured/FeaturedJunaHorstman/Junaslider";
 
 const stichtingLeftData = [
