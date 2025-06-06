@@ -42,11 +42,14 @@ const Stichting = () => {
         Heading="Founding Couple you For"
       />
 
+
       <Textarea
         textColor="black"
         leftData={stichtingLeftData}
         rightData={stichtingRightData}
       />
+
+
       <Junaslider
       slider={obj}
       

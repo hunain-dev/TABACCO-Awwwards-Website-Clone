@@ -1,10 +1,10 @@
 import React from 'react'
 import ImpressiveOverview from './ImpressiveOverview'
-import TextArea from './TextArea'
+import Aboutimpressive from './Aboutimpressive'
 const ImpressiveTextArea = () => {
   return (
     <div className='impressiveAmsterdam'>
-      <TextArea />
+      <Aboutimpressive />
       <ImpressiveOverview/>
     </div>
   )
