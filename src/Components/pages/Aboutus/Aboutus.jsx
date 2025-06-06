@@ -1,10 +1,9 @@
-import React from "react";
 import HallRentalLaning from "../HallRental/HallRentalLaning/HallRentalLaning";
-import BustlingTobacco from "./bustlingtobacco/bustlingtobacco";
 import Featured from "../Home/Featured/Featured";
 import Ourrental from "../HallRental/Ourrental/Ourrental";
 import TakeTabbaco from "../Home/TakeTabbaco/TakeTabbaco";
 import Loader from "../../Loader/Loader";
+import BustlingTabacco from "./BustlingTabacco/BustlingTabacco";
 
 const aboutHoverData = {
   textleft: [
@@ -48,7 +47,7 @@ const Aboutus = ({ firstHeading = "Our", secondHeading = "Team" }) => {
           textColor="#FFEA44" // ✅ ya "black", "red", "#333"
         />
 
-      <BustlingTobacco />
+      <BustlingTabacco />
 
       <Featured
         imageUrl="https://tobacco.nl/wp-content/uploads/2024/10/gallery_img_06.jpg"
