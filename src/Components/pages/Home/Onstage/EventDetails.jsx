@@ -4,6 +4,7 @@ import HallRentalLaning from "../../HallRental/HallRentalLaning/HallRentalLaning
 import Button from "../Button/Button";
 import Onstagecard from "./Onstagecard";
 import ImpressiveTextArea from "../ImpressiveTextArea/ImpressiveTextArea";
+import FeaturedTextarea from "../Featured/FeaturedJunaHorstman/FeaturedTextarea";
 
 const EventDetails = () => {
   const { title } = useParams();
@@ -52,7 +53,7 @@ const EventDetails = () => {
       <div className="eventbottom">
         <div className="eventbottomleft">
           <div>
-            <ImpressiveTextArea
+            <FeaturedTextarea
               textColor="black"
              leftData={leftArray}
               rightData={rightArray}
